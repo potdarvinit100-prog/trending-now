@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trending Now — New Open-Source Repos by Stars</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Trending Now</h1>
+  <p>Open-source repositories created in the last 7 days, ranked by stars. Filter by language to find what is actually blowing up in the stack you care about.</p>
+</header>
+<main>
+  <div class="controls">
+    <label for="language">Language</label>
+    <select id="language">
+      <option value="">All languages</option>
+    </select>
+    <button id="refresh" type="button">Refresh now</button>
+  </div>
+
+  <p class="status" id="status">Loading live data…</p>
+  <div class="error" id="error" hidden></div>
+  <p class="summary" id="summary"></p>
+  <ul class="list" id="list"></ul>
+
+  <footer>
+    <p>Data: <a href="https://docs.github.com/en/rest/search/search" target="_blank" rel="noopener">GitHub Search API</a>, no key. Unauthenticated requests are limited to 60 per hour — this page makes one request per refresh, and shows the remaining quota when GitHub reports it. Auto-refreshes every 10 minutes.</p>
+    <p id="sourceLine"></p>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
